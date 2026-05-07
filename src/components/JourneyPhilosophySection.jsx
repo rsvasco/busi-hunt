@@ -1,177 +1,193 @@
-import React from "react";
 import { motion } from "framer-motion";
+import {
+  Rocket,
+  Lightbulb,
+  Users,
+  ArrowRight,
+  Quote,
+} from "lucide-react";
 
-const philosophyPoints = [
-  {
-    title: "Empowerment",
-    description:
-      "Providing members with the right tools, resources, and opportunities to grow confidently in their industries.",
-  },
-  {
-    title: "Innovation",
-    description:
-      "Encouraging collaboration, creativity, and forward-thinking ideas that help businesses evolve faster.",
-  },
-  {
-    title: "Collaboration",
-    description:
-      "Building a supportive networking culture where professionals connect, share insights, and succeed together.",
-  },
-];
+export default function VisionCollaborationSection() {
+  const features = [
+    {
+      icon: <Rocket size={16} />,
+      title: "Empowerment",
+      desc: "Unlock opportunities and scale confidently.",
+    },
+    {
+      icon: <Lightbulb size={16} />,
+      title: "Innovation",
+      desc: "Encouraging creative collaboration and growth.",
+    },
+    {
+      icon: <Users size={16} />,
+      title: "Community",
+      desc: "Meaningful relationships that create success.",
+    },
+  ];
 
-export default function JourneyPhilosophySection() {
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] py-16 md:py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F8FAFF] via-[#EEF2FF] to-[#F3F5FF] py-14 md:py-16">
+      
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-0 top-10 h-72 w-72 rounded-full bg-[#E63946]/5 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[#1F2A5A]/5 blur-3xl" />
+        <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-[#E63946]/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[#243B7A]/10 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-[#E63946]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] text-[#E63946]">
-            Our Foundation
-          </span>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
 
-          <h2 className="mt-5 text-3xl font-black leading-tight text-[#1F2A5A] md:text-5xl">
-            Driven by Vision & Collaboration
-          </h2>
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.65fr]">
 
-          <p className="mt-5 text-base leading-8 text-slate-600 md:text-lg">
-            BusiHunt helps entrepreneurs and professionals connect, collaborate,
-            and grow through meaningful networking opportunities.
-          </p>
-        </div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {/* Journey */}
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="group relative overflow-hidden rounded-[30px] border border-slate-200 bg-white p-8 shadow-[0_20px_60px_rgba(31,42,90,0.08)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_80px_rgba(31,42,90,0.14)]"
           >
-            {/* Glow */}
-            <div className="absolute -right-20 -top-20 h-52 w-52 rounded-full bg-[#E63946]/5 blur-3xl transition-all duration-500 group-hover:bg-[#E63946]/10" />
+            {/* Tag */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/10 bg-white/80 px-4 py-2 shadow-md backdrop-blur-md">
+              <div className="h-2 w-2 rounded-full bg-[#E63946]" />
 
-            {/* Icon */}
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-[#E63946]/10">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.8}
-                stroke="currentColor"
-                className="h-7 w-7 text-[#E63946]"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 6v6l4 2"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#E63946]">
+                Our Foundation
+              </span>
             </div>
 
-            <div className="relative mt-7">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#E63946]">
-                Our Journey
+            {/* Heading */}
+            <h2 className="mt-5 text-4xl font-black leading-[0.9] tracking-tight text-[#1E2A5A] sm:text-5xl md:text-6xl">
+              Vision
+              <br />
+
+              <span className="text-[#E63946]">
+                Meets
               </span>
 
-              <h3 className="mt-4 text-2xl font-black leading-tight text-[#1F2A5A] md:text-3xl">
-                From Small Connections to a Thriving Community
-              </h3>
+              <br />
 
-              <p className="mt-5 text-sm leading-7 text-slate-600 md:text-base">
-                BusiHunt started with one simple mission — helping professionals
-                and entrepreneurs build meaningful business relationships.
-              </p>
+              Collaboration
+            </h2>
 
-              <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
-                Today, we continue empowering members through networking,
-                collaboration, and business growth opportunities.
-              </p>
+            {/* Description */}
+            <p className="mt-5 max-w-xl text-[15px] leading-8 text-slate-600">
+              BusiHunt creates premium networking experiences where ambitious
+              professionals connect, collaborate, and grow together through
+              innovation and meaningful relationships.
+            </p>
+
+            {/* Quote Card - NEW POSITION */}
+            <motion.div
+              whileHover={{ y: -3 }}
+              className="mt-7 flex max-w-md items-start gap-4 rounded-[24px] border border-white/60 bg-white/70 p-5 shadow-[0_12px_35px_rgba(15,23,42,0.06)] backdrop-blur-xl"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#E63946]/10 text-[#E63946]">
+                <Quote size={20} />
+              </div>
+
+              <div>
+                <p className="text-[15px] font-semibold leading-7 text-[#1E2A5A]">
+                  Great businesses grow faster when ambitious minds connect and collaborate together.
+                </p>
+
+                <div className="mt-3 h-[3px] w-14 rounded-full bg-[#E63946]" />
+              </div>
+            </motion.div>
+
+            {/* Stats */}
+            <div className="mt-8 flex flex-wrap gap-4">
+              {[
+                { value: "500+", label: "Members" },
+                { value: "20+", label: "Events" },
+                { value: "15+", label: "Chapters" },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -3 }}
+                  className="rounded-[22px] border border-white/70 bg-white/90 px-6 py-4 shadow-[0_10px_25px_rgba(15,23,42,0.05)] backdrop-blur-md"
+                >
+                  <h3 className="text-2xl font-black text-[#1E2A5A]">
+                    {item.value}
+                  </h3>
+
+                  <p className="mt-1 text-sm text-slate-500">
+                    {item.label}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Philosophy */}
+          {/* RIGHT SIDE CARD */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="group relative overflow-hidden rounded-[30px] bg-[#1F2A5A] p-8 shadow-[0_20px_60px_rgba(31,42,90,0.18)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_80px_rgba(31,42,90,0.25)]"
+            className="relative"
           >
-            {/* Glow */}
-            <div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-white/5 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[32px] bg-gradient-to-br from-[#243B7A] via-[#1E2A5A] to-[#2B2965] p-6 shadow-[0_20px_50px_rgba(31,42,90,0.14)]">
 
-            {/* Icon */}
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.8}
-                stroke="currentColor"
-                className="h-7 w-7 text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9.813 15.904L9 18l-1.813-2.096a5.25 5.25 0 1111.626 0L18 18l-.813-2.096"
-                />
-              </svg>
-            </div>
+              {/* Glow */}
+              <div className="absolute -top-10 right-0 h-40 w-40 rounded-full bg-[#E63946]/20 blur-3xl" />
 
-            <div className="relative mt-7">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#E63946]">
-                Our Philosophy
-              </span>
+              {/* Arrow */}
+              <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#E63946] shadow-lg">
+                <ArrowRight size={18} />
+              </div>
 
-              <h3 className="mt-4 text-2xl font-black leading-tight text-white md:text-3xl">
+              {/* Heading */}
+              <h3 className="max-w-[260px] text-[34px] font-black leading-[1.1] text-white">
                 Empowering Businesses Through Collaboration
               </h3>
 
-              <p className="mt-5 text-sm leading-7 text-slate-300 md:text-base">
-                We believe success grows faster when professionals collaborate,
-                support, and learn from each other.
-              </p>
-
-              {/* Points */}
-              <div className="mt-7 space-y-4">
-                {philosophyPoints.map((item, index) => (
-                  <div
-                    key={index}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-5"
+              {/* Feature Cards */}
+              <div className="mt-6 space-y-4">
+                {features.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    whileHover={{ scale: 1.01 }}
+                    className="flex items-start gap-4 rounded-[22px] border border-white/10 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:bg-white/10"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#E63946] text-sm font-bold text-white">
-                        {index + 1}
-                      </div>
-
-                      <div>
-                        <h4 className="text-base font-bold text-white">
-                          {item.title}
-                        </h4>
-
-                        <p className="mt-2 text-sm leading-6 text-slate-300">
-                          {item.description}
-                        </p>
-                      </div>
+                    {/* Icon */}
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-[#E63946] shadow-md">
+                      {item.icon}
                     </div>
-                  </div>
+
+                    {/* Content */}
+                    <div>
+                      <h4 className="text-[18px] font-bold text-white">
+                        {item.title}
+                      </h4>
+
+                      <p className="mt-1 text-[14px] leading-7 text-slate-300">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
                 ))}
+              </div>
+
+              {/* CTA */}
+              <div className="mt-5 flex items-center justify-between rounded-[24px] bg-gradient-to-r from-[#FF4D5A] to-[#E63946] px-5 py-5 shadow-[0_12px_30px_rgba(230,57,70,0.28)]">
+                
+                <div>
+                  <h4 className="text-xl font-black text-white">
+                    Join Our Network
+                  </h4>
+
+                  <p className="mt-1 text-sm text-white/90">
+                    Build valuable business connections.
+                  </p>
+                </div>
+
+                <button className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#E63946] transition-all duration-300 hover:scale-110">
+                  <ArrowRight size={20} />
+                </button>
               </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

@@ -1,13 +1,13 @@
-import ChapterHero from "../components/ChapterHero";
 import ChapterMembers from "../components/ChapterMembers";
+import ChennaiChapterHero from "../components/ChennaiChapterHero";
 import Tagline from "../components/Tagline";
 
 
 
-export default function Chapter() {
+export default function ChennaiChapter() {
   return (
     <>
-      <ChapterHero  />
+      <ChennaiChapterHero  />
       <ChapterMembers  />
       <Tagline />
     </>

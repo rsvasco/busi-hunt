@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
 
@@ -27,18 +28,29 @@ export default function Footer() {
   },
 ];
   return (
-    <footer className="bg-[#1F2A5A] text-white pt-16 pb-6 font-poppins">
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <footer className="bg-[#1F2A5A] text-white pt-14 pb-6 font-poppins">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr] gap-10 xl:gap-14 mb-14">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-[#E63946] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">BH</span>
+              <div className="bg-white rounded-xl p-2 flex items-center justify-center shadow-md">
+                <img
+                  src={logo}
+                  alt="BusiHunt Logo"
+                  className="h-10 w-auto object-contain"
+                />
               </div>
-              <span className="text-white font-bold text-xl">
-                Busi<span className="text-[#E63946]">Hunt</span>
-              </span>
+
+              <div className="flex flex-col leading-none">
+                <span className="text-white font-bold text-2xl">
+                  Busi<span className="text-[#E63946]">Hunt</span>
+                </span>
+
+                <span className="text-[10px] tracking-[3px] text-gray-400 uppercase mt-1">
+                  Business Excellence
+                </span>
+              </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Connecting ambitious professionals with business opportunities across the globe.
@@ -64,9 +76,12 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-base mb-4 text-white">Quick Links</h4>
-            <ul className="space-y-2">
+            <div>
+              <h4 className="font-semibold text-base mb-5 text-white">
+                Quick Links
+              </h4>
+
+              <ul className="space-y-3">
               {[
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
@@ -77,8 +92,9 @@ export default function Footer() {
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className="text-gray-400 hover:text-[#E63946] text-sm transition-colors"
+                    className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#E63946] transition-all duration-300"
                   >
+                    <span className="w-0 group-hover:w-3 h-px bg-[#E63946] transition-all duration-300 shrink-0" />
                     {link.label}
                   </Link>
                 </li>
@@ -88,11 +104,24 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-semibold text-base mb-4 text-white">Resources</h4>
-            <ul className="space-y-2">
-              {["Team", "Director", "Contact Us", "Privacy Policy", "Terms of Use"].map((item) => (
+            <h4 className="font-semibold text-base mb-5 text-white">
+              Resources
+            </h4>
+
+            <ul className="space-y-3">
+              {[
+                "Team",
+                "Director",
+                "Contact Us",
+                "Privacy Policy",
+                "Terms of Use",
+              ].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-[#E63946] text-sm transition-colors">
+                  <a
+                    href="#"
+                    className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#E63946] transition-all duration-300"
+                  >
+                    <span className="w-0 group-hover:w-3 h-px bg-[#E63946] transition-all duration-300 shrink-0" />
                     {item}
                   </a>
                 </li>
@@ -105,22 +134,35 @@ export default function Footer() {
             <h4 className="font-semibold text-base mb-4 text-white">Contact Info</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-gray-400">
-                <MdLocationOn size={15} className="mt-0.5 text-[#E63946] shrink-0" />
-                No. 513, Kamaraj salai,Axis Bank upstairs, 2nd floor,Saram,Puducherry- 605013
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+                  <MdLocationOn size={18} className="text-[#E63946]" />
+                </div>
+
+                <span>
+                  No. 513, Kamaraj salai, Axis Bank upstairs,
+                  2nd floor, Saram, Puducherry - 605013
+                </span>
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400">
-                <MdPhone size={15} className="text-[#E63946] shrink-0" />
-                +91 9500900595
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+                  <MdPhone size={18} className="text-[#E63946]" />
+                </div>
+
+                <span>+91 9500900595</span>
               </li>
+
               <li className="flex items-center gap-3 text-sm text-gray-400">
-                <MdEmail size={15} className="text-[#E63946] shrink-0" />
-                info@busihunt.com
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+                  <MdEmail size={18} className="text-[#E63946]" />
+                </div>
+
+                <span>info@busihunt.com</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-blue-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-gray-500">
+       <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           <p>© {new Date().getFullYear()} BusiHunt. All rights reserved.</p>
           <p>Designed with ❤️ by BusiHunt Team</p>
         </div>

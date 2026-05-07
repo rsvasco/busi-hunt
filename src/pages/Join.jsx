@@ -1,4 +1,4 @@
-import PageHeader from "../components/PageHeader";
+import JoinPageHeader from "../components/JoinPageHeader";
 import StepsSection from "../components/StepsSection";
 import Tagline from "../components/Tagline";
 
@@ -7,7 +7,7 @@ import Tagline from "../components/Tagline";
 export default function Join() {
   return (
     <>
-      <PageHeader  />
+      <JoinPageHeader />
       <StepsSection  />
       <Tagline />
     </>

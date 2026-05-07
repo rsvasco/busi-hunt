@@ -51,7 +51,7 @@ export default function HeroCarousel() {
       ))}
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 bg-[#1F2A5A]/90" />
+      <div className="absolute inset-0 bg-[#1F2A5A]/60" />
 
       {/* CONTENT */}
       <div className="relative z-10 flex items-center justify-center h-full text-center px-4">

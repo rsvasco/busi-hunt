@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
+import logo from '../assets/logo.png';
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -12,76 +13,95 @@ const navLinks = [
       { label: "About Director", to: "/director" },
     ],
   },
-  { label: "Find a Chapter", to: "/chapter" },
+  {
+  label: "Find a Chapter",
+  dropdown: [
+    { label: "Pondy Chapter", to: "/pondy-chapter" },
+    { label: "Chennai Chapter", to: "/chennai-chapter" },
+  ],
+  },
   { label: "Team", to: "/team" },
   { label: "How to Join", to: "/how-to-join" },
   { label: "Gallery", to: "/gallery" },
-  { label: "Contact Us", to: "/contact" },
+  
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileDropOpen, setMobileDropOpen] = useState(false);
-  const [desktopDropOpen, setDesktopDropOpen] = useState(false);
+  const [mobileDropOpen, setMobileDropOpen] = useState(null);
+  const [desktopDropOpen, setDesktopDropOpen] = useState(null);
   const location = useLocation();
-  const dropRef = useRef(null);
 
   useEffect(() => {
     setMobileOpen(false);
-    setMobileDropOpen(false);
+    setMobileDropOpen(null);
   }, [location]);
 
-  useEffect(() => {
-    function handleClick(e) {
-      if (dropRef.current && !dropRef.current.contains(e.target)) {
-        setDesktopDropOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, []);
+ 
 
   const isActive = (to) => location.pathname === to;
 
   return (
-    <header className="bg-[#1F2A5A] text-white shadow-md">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#1F2A5A]/95 backdrop-blur-md border-b border-white/10 text-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-9 h-9 bg-[#E63946] rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-sm">BH</span>
-          </div>
-          <span className="text-white font-bold text-xl tracking-wide font-poppins">
-            Busi<span className="text-[#E63946]">Hunt</span>
-          </span>
-        </Link>
+        {/* Logo */}
+<Link
+  to="/"
+  className="flex items-center gap-2 sm:gap-3"
+>
+  <div className="rounded-xl bg-white/95 p-1.5 shadow-lg">
+  <img
+    src={logo}
+    alt="BusiHunt Logo"
+    className="
+      h-8 w-auto
+      sm:h-9
+      md:h-10
+      object-contain
+    "
+  />
+</div>
+
+  <div className="leading-none">
+    <h1 className="text-lg font-bold text-white sm:text-xl">
+      Busi
+      <span className="text-[#E63946]">
+        Hunt
+      </span>
+    </h1>
+
+    <p className="mt-1 text-[9px] uppercase tracking-[0.25em] text-slate-300">
+      Business Excellence
+    </p>
+  </div>
+</Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+        <nav className="hidden lg:flex items-center gap-0" aria-label="Main navigation">
           {navLinks.map((link) =>
             link.dropdown ? (
               <div
                 key={link.label}
-                ref={dropRef}
                 className="relative"
-                onMouseEnter={() => setDesktopDropOpen(true)}
-                onMouseLeave={() => setDesktopDropOpen(false)}
+                onMouseEnter={() => setDesktopDropOpen(link.label)}
+                onMouseLeave={() => setDesktopDropOpen(null)}
               >
                 <button
                   className={`flex items-center gap-1 px-3 py-2 rounded text-sm font-medium transition-colors ${
-                    desktopDropOpen ? "text-[#E63946]" : "text-white hover:text-[#E63946]"
+                    desktopDropOpen === link.label ? "text-[#E63946]" : "text-white hover:text-[#E63946]"
                   }`}
                   aria-haspopup="true"
-                  aria-expanded={desktopDropOpen}
+                  aria-expanded={desktopDropOpen === link.label}
                 >
                   {link.label}
                   <ChevronDown
                     size={14}
-                    className={`transition-transform duration-200 ${desktopDropOpen ? "rotate-180" : ""}`}
+                    className={`transition-transform duration-200 ${desktopDropOpen === link.label ? "rotate-180" : ""}`}
                   />
                 </button>
                 <AnimatePresence>
-                  {desktopDropOpen && (
+                  {desktopDropOpen === link.label && (
                     <motion.div
                       initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -116,6 +136,13 @@ export default function Navbar() {
               </Link>
             )
           )}
+          {/* CTA Button */}
+          <Link
+  to="/contact"
+  className="ml-4 px-5 py-2 rounded-xl bg-gradient-to-r from-[#E63946] to-[#ff4d5a] text-white text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_25px_rgba(230,57,70,0.35)]"
+>
+  Get In Touch
+</Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -145,17 +172,21 @@ export default function Navbar() {
                   <div key={link.label}>
                     <button
                       className="flex items-center justify-between w-full px-3 py-2 text-white text-sm font-medium hover:text-[#E63946] transition-colors"
-                      onClick={() => setMobileDropOpen(!mobileDropOpen)}
-                      aria-expanded={mobileDropOpen}
+                      onClick={() =>
+                        setMobileDropOpen(
+                          mobileDropOpen === link.label ? null : link.label
+                        )
+                      }
+                      aria-expanded={mobileDropOpen === link.label}
                     >
                       {link.label}
                       <ChevronDown
                         size={14}
-                        className={`transition-transform duration-200 ${mobileDropOpen ? "rotate-180" : ""}`}
+                        className={`transition-transform duration-200 ${mobileDropOpen === link.label ? "rotate-180" : ""}`}
                       />
                     </button>
                     <AnimatePresence>
-                      {mobileDropOpen && (
+                      {mobileDropOpen === link.label && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
@@ -188,6 +219,13 @@ export default function Navbar() {
                   </Link>
                 )
               )}
+              {/* Mobile CTA */}
+<Link
+  to="/contact"
+  className="mt-4 w-full text-center px-4 py-3 rounded-xl bg-gradient-to-r from-[#E63946] to-[#ff4d5a] text-white text-sm font-semibold transition-all duration-300"
+>
+  Get In Touch
+</Link>
             </nav>
           </motion.div>
         )}

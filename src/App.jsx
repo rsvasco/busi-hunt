@@ -8,8 +8,9 @@ import Join from "./pages/Join";
 import Team from "./pages/Team";
 import Gallery from "./pages/Gallery";
 import Director from "./pages/Director";
-import Chapter from "./pages/Chapter";
+import PondyChapter from "./pages/PondyChapter";
 import FloatingActionButtons from "./components/FloatingButtons";
+import ChennaiChapter from "./pages/ChennaiChapter";
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/director" element={<Director />} />
-         <Route path="/chapter" element={<Chapter />} />
+        <Route path="/pondy-chapter" element={<PondyChapter />} />
+        <Route path="/chennai-chapter" element={<ChennaiChapter />} />
         <Route path="/team" element={<Team />} />
         <Route path="/how-to-join" element={<Join />} />
         <Route path="/gallery" element={<Gallery />} />

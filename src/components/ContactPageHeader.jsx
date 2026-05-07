@@ -1,33 +1,40 @@
 import { motion } from "framer-motion";
-import aboutBg from "../assets/about.png";
+import contactBg from "../assets/DIWALICELEBRATIONS.jpeg";
 
-export default function PageHeader() {
+export default function ContactPageHeader() {
   return (
     <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{
-          backgroundImage: `url(${aboutBg})`,
+          backgroundImage: `url(${contactBg})`,
         }}
       />
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/40" />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0B122B]/80 via-[#243266]/50 to-[#0B122B]/80" />
+      {/* Premium Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0B122B]/55 via-[#1E3A5F]/20 to-[#0B122B]/55" />
+
+      {/* Decorative Blur */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-[#E63946]/20 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#FFD166]/10 blur-3xl rounded-full" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 text-center">
+        {/* Small Tag */}
+        
+
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight mt-40"
         >
-          About Us
+          Contact Us
         </motion.h1>
 
         {/* Subtitle */}
@@ -37,11 +44,12 @@ export default function PageHeader() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed"
         >
-          Discover the story behind BusiHunt and our mission to transform
-          business networking through innovation, collaboration, and meaningful
-          professional connections.
+          We’d love to hear from you. Reach out to BusiHunt for collaborations,
+          partnerships, events, or any inquiries and let’s build meaningful
+          business connections together.
         </motion.p>
       </div>
     </section>
   );
 }
+

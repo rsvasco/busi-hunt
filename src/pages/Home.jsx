@@ -7,17 +7,21 @@ import UltraCTA from "../components/UltraCTA";
 import Tagline from "../components/Tagline";
 import PremiumRedCardsSection from "../components/RedCards";
 import TestimonialSection from "../components/TestimonialSection";
+import GrowthSection from "../components/GrowthSection";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <div className="pt-20">
+        <Hero />
+      </div>
       <ProcessSection />
       <FeatureSplit />
       <Tagline />
       <FeaturesGrid />
       <PremiumRedCardsSection />
       <TestimonialSection />
+      <GrowthSection />
       <CTASection />
       <UltraCTA />
     </>
