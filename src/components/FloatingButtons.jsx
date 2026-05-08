@@ -34,7 +34,7 @@ export default function FloatingActionButtons() {
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             transition={{ duration: 0.25 }}
             onClick={scrollToTop}
-            className="group relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-[#4A9EFF] shadow-[0_10px_30px_rgba(74,158,255,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_14px_40px_rgba(74,158,255,0.45)] sm:h-16 sm:w-16"
+            className="group relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-[#1F2A5A] shadow-[0_10px_30px_rgba(74,158,255,0.35)] transition-all duration-300 hover:scale-110 hover:shadow-[0_14px_40px_rgba(74,158,255,0.45)] sm:h-16 sm:w-16"
             aria-label="Scroll to top"
           >
             {/* Glow */}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: {
@@ -50,15 +51,32 @@ function ArrowIcon() {
   );
 }
 
-function PrimaryButton({ href = "#", children }) {
+function PrimaryButton({ to = "/", children }) {
   return (
-    <a
-      href={href}
-      className="group inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 text-[13px] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-xl"
+    <Link
+      to={to}
+      className="
+        group
+        inline-flex
+        items-center
+        gap-2
+        rounded-full
+        bg-black
+        px-5
+        py-2.5
+        text-[13px]
+        font-medium
+        text-white
+        transition-all
+        duration-300
+        hover:-translate-y-0.5
+        hover:bg-neutral-800
+        hover:shadow-xl
+      "
     >
       {children}
       <ArrowIcon />
-    </a>
+    </Link>
   );
 }
 
@@ -80,7 +98,8 @@ const stats = [
 export default function StorySection() {
   return (
     <section className="bg-[#f7f7f7] py-20 md:py-28">
-      <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 md:grid-cols-2 md:px-6 lg:gap-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid items-center gap-12 md:grid-cols-2 lg:gap-16">
+
         {/* Left Image */}
         <SectionWrapper>
           <div className="overflow-hidden rounded-[22px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
@@ -95,6 +114,7 @@ export default function StorySection() {
         {/* Right Content */}
         <SectionWrapper delay={0.15}>
           <div className="max-w-lg">
+
             <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#ef4444]">
               OUR STORY
             </span>
@@ -116,12 +136,29 @@ export default function StorySection() {
             </p>
 
             <div className="mt-8">
-              <a
-                href="/how-to-join"
-                className="inline-flex items-center justify-center rounded-lg bg-[#ef4444] px-6 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[#dc2626]"
+
+              <Link
+                to="/how-to-join"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  rounded-lg
+                  bg-[#ef4444]
+                  px-6
+                  py-3
+                  text-sm
+                  font-semibold
+                  text-white
+                  shadow-md
+                  transition-all
+                  duration-300
+                  hover:bg-[#dc2626]
+                "
               >
                 Join Our Community
-              </a>
+              </Link>
+
             </div>
           </div>
         </SectionWrapper>

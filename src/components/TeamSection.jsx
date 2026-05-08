@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiLinkedin, FiPhone, FiMail } from "react-icons/fi";
-import one from '../assets/MURUGAN.png'
+import one from '../assets/Murugan1.jpeg'
 import two from '../assets/SAKARAI.png'
 import three from '../assets/SATHISHKUMAR.png'
 

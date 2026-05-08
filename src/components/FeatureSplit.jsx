@@ -1,10 +1,11 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function FeatureSplit() {
   return (
     <section className="py-16 md:py-24 bg-white font-poppins">
-      <div className="max-w-6xl mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
 
         {/* Image */}
         <div className="relative group overflow-hidden rounded-2xl shadow-xl">
@@ -39,20 +40,49 @@ export default function FeatureSplit() {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a
-              href="/about"
-              className="inline-flex items-center justify-center gap-2 bg-[#E63946] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#d62839] transition"
+
+            <Link
+              to="/about"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                bg-[#E63946]
+                text-white
+                px-6
+                py-3
+                rounded-lg
+                font-semibold
+                hover:bg-[#d62839]
+                transition
+              "
             >
               Discover Our Story
               <FaArrowRight size={14} />
-            </a>
+            </Link>
 
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+            <Link
+              to="/contact"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                gap-2
+                border
+                border-gray-300
+                text-gray-700
+                px-6
+                py-3
+                rounded-lg
+                font-semibold
+                hover:bg-gray-100
+                transition
+              "
             >
               Contact Us
-            </a>
+            </Link>
+
           </div>
         </div>
       </div>

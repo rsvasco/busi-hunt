@@ -11,9 +11,9 @@ export default function DirectorProfile() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* IMAGE SIDE */}
-          <div className="relative mx-auto w-full max-w-[560px]">
+          <div className="relative w-full">
             {/* Decorative Shape */}
             <div className="absolute -left-5 -top-5 hidden h-28 w-28 rounded-[28px] border border-[#E63946]/20 bg-[#E63946]/5 backdrop-blur-xl lg:block" />
 
@@ -45,7 +45,7 @@ export default function DirectorProfile() {
           </div>
 
           {/* CONTENT SIDE */}
-          <div className="max-w-xl">
+          <div className="w-full max-w-[620px]">
             {/* Label */}
             <span className="inline-flex rounded-full border border-[#E63946]/10 bg-[#E63946]/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#E63946]">
               Meet Our Leader

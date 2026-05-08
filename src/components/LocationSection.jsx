@@ -11,10 +11,10 @@ export default function LocationSection() {
         <div className="absolute w-[300px] h-[300px] bg-[#E63946]/10 blur-[140px] bottom-0 right-0 rounded-full" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="text-xs uppercase tracking-[0.25em] text-[#E63946] mb-3">
             Our Location
           </p>
@@ -26,7 +26,7 @@ export default function LocationSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* MAP */}
           <motion.div

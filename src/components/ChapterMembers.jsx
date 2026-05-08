@@ -1,9 +1,11 @@
+import one from '../assets/1.png'
+
+
 const members = [
   {
     name: "S. V. Anand",
     role: "Director",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80",
+    image: one ,
   },
   {
     name: "Mr. Murugan",

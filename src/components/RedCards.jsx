@@ -118,7 +118,7 @@ export default function PremiumRedCardsSection() {
           </p>
         </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {redCards.map((card, index) => {
             return (
               <motion.div

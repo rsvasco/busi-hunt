@@ -11,6 +11,8 @@ import Director from "./pages/Director";
 import PondyChapter from "./pages/PondyChapter";
 import FloatingActionButtons from "./components/FloatingButtons";
 import ChennaiChapter from "./pages/ChennaiChapter";
+import NotFoundPage from "./pages/NotFoundPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
@@ -30,6 +33,7 @@ function App() {
         <Route path="/how-to-join" element={<Join />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} /> 
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <FloatingActionButtons />
       <Footer />

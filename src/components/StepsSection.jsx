@@ -58,10 +58,10 @@ export const stepsData = [
 export default function StepsSection({ steps = stepsData }) {
   return (
     <section className="py-16 md:py-20 bg-[#f9fafc]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ===== HEADER ===== */}
-        <div className="text-center mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1F2A5A] mb-3">
             Your Journey Starts Here
           </h2>
@@ -71,7 +71,7 @@ export default function StepsSection({ steps = stepsData }) {
         </div>
 
         {/* ===== STEPS GRID ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {steps.map((step, i) => (
             <motion.div
               key={i}

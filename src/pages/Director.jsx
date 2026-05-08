@@ -1,6 +1,6 @@
 import DirectorContentSection from "../components/DirectorContentSection";
+import DirectorHeader from "../components/DirectorHeader";
 import DirectorProfile from "../components/DirectorProfile";
-import PageHeader from "../components/PageHeader";
 import Tagline from "../components/Tagline";
 
 
@@ -8,7 +8,7 @@ import Tagline from "../components/Tagline";
 export default function Director() {
   return (
     <>
-      <PageHeader  />
+      <DirectorHeader  />
       <DirectorProfile />
       <DirectorContentSection />
       <Tagline />
