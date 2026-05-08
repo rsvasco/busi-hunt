@@ -12,7 +12,7 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-3xl bg-[#1F2A5A] px-6 sm:px-10 md:px-16 py-12 md:py-20 text-center shadow-xl"
+          className="relative overflow-hidden rounded-[24px] bg-[#1F2A5A] px-6 sm:px-10 md:px-16 py-10 md:py-14 text-center shadow-xl hover:-translate-y-1 transition-all duration-500"
         >
           {/* Decorative background shapes */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-[#E63946]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />

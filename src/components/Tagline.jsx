@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function TaglineSection() {
   return (
+  <>
     <section className="bg-[#1F2A5A] overflow-hidden">
 
       <div className="w-full">
@@ -41,8 +42,7 @@ export default function TaglineSection() {
             <div
               className="
                 flex-shrink-0
-                w-22
-                h-22
+                w-18 h-18 sm:w-20 sm:h-20
                 bg-[#E63946]
                 rounded-md
                 flex
@@ -130,5 +130,8 @@ export default function TaglineSection() {
         </motion.div>
       </div>
     </section>
+    {/* Footer Separation */}
+    <div className="h-14 bg-gradient-to-b from-[#f8fafc] to-white" />
+  </>
   );
 }

@@ -10,8 +10,9 @@ export default function Director() {
     <>
       <DirectorHeader  />
       <DirectorProfile />
-      <DirectorContentSection />
       <Tagline />
+      <DirectorContentSection />
+      
     </>
   );
 }

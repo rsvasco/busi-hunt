@@ -11,11 +11,11 @@ export default function Footer() {
     href: "https://www.facebook.com/people/Busi-Hunt/61584858450905/?rdid=vbaFqZhJx9hlqBQv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Gs1bRpGp4%2F",
     label: "Facebook",
   },
-  {
+  /* {
     icon: FaTwitter,
     href: "https://twitter.com",
     label: "Twitter",
-  },
+  }, */
   {
     icon: FaLinkedin,
     href: "https://www.linkedin.com/company/busihunt/",
@@ -85,7 +85,7 @@ export default function Footer() {
               {[
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
-                { label: "Find a Chapter", to: "/chapter" },
+                { label: "Pondy Chapter", to: "/pondy-chapter" },
                 { label: "How to Join", to: "/how-to-join" },
                 { label: "Gallery", to: "/gallery" },
               ].map((link) => (
@@ -103,31 +103,32 @@ export default function Footer() {
           </div>
 
           {/* Resources */}
-          <div>
-            <h4 className="font-semibold text-base mb-5 text-white">
-              Resources
-            </h4>
+          {/* Resources */}
+<div>
+  <h4 className="font-semibold text-base mb-5 text-white">
+    Resources
+  </h4>
 
-            <ul className="space-y-3">
-              {[
-                "Team",
-                "Director",
-                "Contact Us",
-                "Privacy Policy",
-                "Terms of Use",
-              ].map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#E63946] transition-all duration-300"
-                  >
-                    <span className="w-0 group-hover:w-3 h-px bg-[#E63946] transition-all duration-300 shrink-0" />
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+  <ul className="space-y-3">
+    {[
+      { label: "Team", to: "/team" },
+      { label: "Director", to: "/director" },
+      { label: "Chennai Chapter", to: "/chennai-chapter" },
+      { label: "Contact Us", to: "/contact" },
+      { label: "Terms of Use", to: "/terms-of-use" },
+    ].map((link) => (
+      <li key={link.to}>
+        <Link
+          to={link.to}
+          className="group flex items-center gap-2 text-sm text-gray-400 hover:text-[#E63946] transition-all duration-300"
+        >
+          <span className="w-0 group-hover:w-3 h-px bg-[#E63946] transition-all duration-300 shrink-0" />
+          {link.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
           {/* Contact */}
           <div>

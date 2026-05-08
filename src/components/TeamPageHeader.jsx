@@ -3,7 +3,7 @@ import teamBg from "../assets/join.jpeg"; // change your image path
 
 export default function TeamPageHeader() {
   return (
-    <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[55vh] md:min-h-[65vh] overflow-hidden">
       
       {/* Background Image */}
       <div
@@ -24,19 +24,19 @@ export default function TeamPageHeader() {
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#FFD166]/10 blur-3xl rounded-full" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 text-center mt-28" >
+      <div className="relative z-10 flex items-start justify-center h-full px-6 md:px-10 pt-24 md:pt-28 text-center">
 
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight mt-20"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight"
         >
           Our Team
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Subtitle 
         <motion.p
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export default function TeamPageHeader() {
           Meet the passionate leaders and dedicated professionals behind
           BusiHunt who work together to build strong business communities,
           meaningful collaborations, and impactful networking opportunities.
-        </motion.p>
+        </motion.p> */}
       </div>
     </section>
   );

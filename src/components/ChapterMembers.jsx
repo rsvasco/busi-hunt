@@ -1,41 +1,41 @@
-import one from '../assets/1.png'
-
+import anand from "../assets/anand.jpeg";
+import anbuSuriya from "../assets/anbu suriya.jpeg";
+import satishkumar from "../assets/Sathishkumar.jpeg";
+import arunkumar from "../assets/arunkumar.jpeg";
+import devaraj from "../assets/Devaraj.jpeg";
+import duraikannu from "../assets/duraikannu.jpeg";
+import { Link } from "react-router-dom";
 
 const members = [
   {
     name: "S. V. Anand",
     role: "Director",
-    image: one ,
+    image: anand ,
   },
   {
     name: "Mr. Murugan",
     role: "Support Director",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&q=80",
+    image: anbuSuriya,
   },
   {
     name: "Parvin Begum",
     role: "Secretary Treasurer",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80",
+    image: satishkumar,
   },
   {
     name: "Vairamani",
     role: "President",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900&q=80",
+    image: arunkumar,
   },
   {
     name: "Thanigaivelan",
     role: "Vice President",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80",
+    image: devaraj,
   },
   {
     name: "Duraikannu",
     role: "Coordinator",
-    image:
-      "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=900&q=80",
+    image: duraikannu,
   },
 ];
 
@@ -92,7 +92,7 @@ export default function ChapterMembers() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-20 rounded-[32px] bg-[#1F2A5A] px-6 py-16 text-center md:px-12">
+        <div className="mt-20 rounded-[32px] bg-[#1F2A5A] px-6 py-16 text-center md:px-12 hover:-translate-y-1 transition-all duration-500">
           <h3 className="text-4xl font-black leading-tight text-white md:text-6xl">
             Your Network Is Your
             <span className="block text-[#E63946]">
@@ -105,9 +105,28 @@ export default function ChapterMembers() {
             opportunities through BusiHunt.
           </p>
 
-          <button className="mt-10 rounded-2xl bg-[#E63946] px-8 py-4 text-sm font-bold uppercase tracking-[0.15em] text-white transition hover:scale-105 hover:bg-[#d62f3f]">
-            Join BusiHunt
-          </button>
+          <Link
+          to="/how-to-join"
+          className="
+            mt-10
+            inline-flex
+            rounded-2xl
+            bg-[#E63946]
+            px-8
+            py-4
+            text-sm
+            font-bold
+            uppercase
+            tracking-[0.15em]
+            text-white
+            transition-all
+            duration-300
+            hover:scale-105
+            hover:bg-[#d62f3f]
+          "
+        >
+          Join BusiHunt
+        </Link>
         </div>
       </div>
     </section>

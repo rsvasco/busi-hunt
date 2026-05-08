@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import directorBg from "../assets/hero1.png";
+import directorBg from "../assets/dir.png";
 
 export default function DirectorHeader() {
   return (

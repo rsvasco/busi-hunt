@@ -8,9 +8,10 @@ export default function Team() {
   return (
     <>
       <TeamPageHeader  />
-      <Tagline />
+      
       {/* <TeamSection /> */}
       <TeamCard />
+      <Tagline />
     </>
   );
 }
