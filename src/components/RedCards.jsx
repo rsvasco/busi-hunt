@@ -88,7 +88,7 @@ function ArrowIcon() {
 
 export default function PremiumRedCardsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#f7f7f9] py-20 sm:py-24 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] via-[#F5F9FF] to-[#EDF4FF] py-20 md:py-24">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-[#E63946]/5 blur-3xl"></div>
         <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-[#1F2A5A]/5 blur-3xl"></div>

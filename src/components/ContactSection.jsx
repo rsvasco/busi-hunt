@@ -1,26 +1,36 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
   FaClock,
   FaPaperPlane,
+  FaSpinner,
 } from "react-icons/fa";
 
 export default function ContactSection() {
+  // EmailJS credentials from .env
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-  const [form, setForm] = useState({
+  // Form state
+  const initialForm = {
     name: "",
     email: "",
     subject: "",
     message: "",
-  });
+  };
 
+  const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
-  // CONTACT INFO
+  // Contact info
   const contactInfo = [
     {
       icon: FaMapMarkerAlt,
@@ -45,33 +55,38 @@ export default function ContactSection() {
     },
   ];
 
-  // HANDLE INPUT
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+  // Common input style
+  const inputStyle =
+    "w-full px-5 py-4 rounded-2xl bg-white/70 backdrop-blur border border-gray-200 text-sm text-gray-800 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-[#E63946] focus:ring-4 focus:ring-[#E63946]/10";
 
-    setErrors({
-      ...errors,
-      [e.target.name]: "",
-    });
+  // Handle input
+  const handleChange = ({ target: { name, value } }) => {
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
+    }));
+
+    setSubmitted(false);
+    setSendError("");
   };
 
-  // STRICT VALIDATION
+  // Validation
   const validate = () => {
-    let newErrors = {};
+    const newErrors = {};
 
-    // NAME
     if (!form.name.trim()) {
       newErrors.name = "Full name is required";
     } else if (form.name.trim().length < 3) {
       newErrors.name = "Name must be at least 3 characters";
     } else if (!/^[A-Za-z\s]+$/.test(form.name)) {
-      newErrors.name = "Only letters are allowed";
+      newErrors.name = "Only letters and spaces are allowed";
     }
 
-    // EMAIL
     if (!form.email.trim()) {
       newErrors.email = "Email address is required";
     } else if (
@@ -80,14 +95,12 @@ export default function ContactSection() {
       newErrors.email = "Enter a valid email address";
     }
 
-    // SUBJECT
     if (!form.subject.trim()) {
       newErrors.subject = "Subject is required";
     } else if (form.subject.trim().length < 5) {
       newErrors.subject = "Subject must be at least 5 characters";
     }
 
-    // MESSAGE
     if (!form.message.trim()) {
       newErrors.message = "Message is required";
     } else if (form.message.trim().length < 20) {
@@ -97,9 +110,12 @@ export default function ContactSection() {
     return newErrors;
   };
 
-  // SUBMIT
-  const handleSubmit = (e) => {
+  // Send email
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setSubmitted(false);
+    setSendError("");
 
     const validationErrors = validate();
 
@@ -108,26 +124,45 @@ export default function ContactSection() {
       return;
     }
 
-    setSubmitted(true);
+    // Check EmailJS configuration
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      setSendError(
+        "Email service is not configured properly. Please check environment variables."
+      );
+      return;
+    }
 
-    // RESET FORM
-    setForm({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    try {
+      setSending(true);
 
-    setErrors({});
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        PUBLIC_KEY
+      );
+
+      // Success
+      setSubmitted(true);
+      setForm(initialForm);
+      setErrors({});
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setSendError(
+        "Failed to send your message. Please try again later."
+      );
+    } finally {
+      setSending(false);
+    }
   };
-
-  // INPUT STYLE
-  const inputStyle =
-    "w-full px-5 py-4 rounded-2xl bg-white/70 backdrop-blur border border-gray-200 text-sm text-gray-800 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-[#E63946] focus:ring-4 focus:ring-[#E63946]/10";
 
   return (
     <section className="relative py-20 overflow-hidden bg-gradient-to-br from-white via-[#F8FAFC] to-[#EEF2FF]">
-
       {/* Ambient Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-10 -left-10 w-[320px] h-[320px] bg-[#1F2A5A]/10 blur-[120px] rounded-full" />
@@ -135,16 +170,13 @@ export default function ContactSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-
           {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-
             <p className="text-xs uppercase tracking-[0.25em] text-[#E63946] font-semibold mb-3">
               Contact Us
             </p>
@@ -155,33 +187,24 @@ export default function ContactSection() {
 
             <p className="text-gray-600 text-base leading-relaxed max-w-lg mb-10">
               Whether you want to join BusiHunt, start a chapter,
-              collaborate, or simply explore opportunities —
-              our team is ready to help you.
+              collaborate, or simply explore opportunities — our team
+              is ready to help you.
             </p>
 
-            {/* CONTACT INFO */}
             <div className="space-y-6">
-
               {contactInfo.map((item, i) => (
                 <div
                   key={i}
                   className="flex items-start gap-5 group"
                 >
-
-                  {/* ICON */}
                   <div className="w-14 h-14 rounded-2xl bg-white shadow-md border border-gray-100 flex items-center justify-center group-hover:scale-105 transition-all duration-300">
-
                     <item.icon className="text-[#E63946] text-lg" />
-
                   </div>
 
-                  {/* TEXT */}
                   <div>
-
                     <p className="font-semibold text-[#1F2A5A] text-base mb-1">
                       {item.title}
                     </p>
-
                     <p className="text-gray-600 leading-relaxed">
                       {item.value}
                     </p>
@@ -198,10 +221,7 @@ export default function ContactSection() {
             transition={{ duration: 0.7 }}
             className="relative rounded-[32px] p-[1px] bg-gradient-to-br from-white/40 to-white/10"
           >
-
-            {/* Glass Form Card */}
             <div className="bg-white/80 backdrop-blur-2xl border border-white/40 rounded-[32px] p-7 sm:p-10 shadow-[0_25px_80px_rgba(0,0,0,0.08)]">
-
               <h3 className="text-2xl sm:text-3xl font-bold text-[#1F2A5A] mb-2 tracking-tight">
                 Send Us a Message
               </h3>
@@ -210,64 +230,51 @@ export default function ContactSection() {
                 We usually respond within 24 hours.
               </p>
 
-              {/* SUCCESS MESSAGE */}
+              {/* Success Message */}
               {submitted && (
                 <div className="mb-6 rounded-2xl border border-green-200 bg-green-50 px-5 py-4 text-sm text-green-700">
                   ✓ Your message has been sent successfully.
                 </div>
               )}
 
+              {/* Error Message */}
+              {sendError && (
+                <div className="mb-6 rounded-2xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
+                  {sendError}
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-5">
-
-                {/* NAME + EMAIL */}
+                {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-                  {/* NAME */}
-                  <div>
-                    <input
-                      type="text"
-                      name="name"
-                      value={form.name}
-                      onChange={handleChange}
-                      placeholder="Full Name"
-                      className={`${inputStyle} ${
-                        errors.name
-                          ? "border-red-400 focus:ring-red-100"
-                          : ""
-                      }`}
-                    />
-
-                    {errors.name && (
-                      <p className="text-red-500 text-xs mt-2">
-                        {errors.name}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* EMAIL */}
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      value={form.email}
-                      onChange={handleChange}
-                      placeholder="Email Address"
-                      className={`${inputStyle} ${
-                        errors.email
-                          ? "border-red-400 focus:ring-red-100"
-                          : ""
-                      }`}
-                    />
-
-                    {errors.email && (
-                      <p className="text-red-500 text-xs mt-2">
-                        {errors.email}
-                      </p>
-                    )}
-                  </div>
+                  {["name", "email"].map((field) => (
+                    <div key={field}>
+                      <input
+                        type={field === "email" ? "email" : "text"}
+                        name={field}
+                        value={form[field]}
+                        onChange={handleChange}
+                        placeholder={
+                          field === "name"
+                            ? "Full Name"
+                            : "Email Address"
+                        }
+                        className={`${inputStyle} ${
+                          errors[field]
+                            ? "border-red-400 focus:ring-red-100"
+                            : ""
+                        }`}
+                      />
+                      {errors[field] && (
+                        <p className="text-red-500 text-xs mt-2">
+                          {errors[field]}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </div>
 
-                {/* SUBJECT */}
+                {/* Subject */}
                 <div>
                   <input
                     type="text"
@@ -281,7 +288,6 @@ export default function ContactSection() {
                         : ""
                     }`}
                   />
-
                   {errors.subject && (
                     <p className="text-red-500 text-xs mt-2">
                       {errors.subject}
@@ -289,7 +295,7 @@ export default function ContactSection() {
                   )}
                 </div>
 
-                {/* MESSAGE */}
+                {/* Message */}
                 <div>
                   <textarea
                     rows={6}
@@ -303,7 +309,6 @@ export default function ContactSection() {
                         : ""
                     }`}
                   />
-
                   {errors.message && (
                     <p className="text-red-500 text-xs mt-2">
                       {errors.message}
@@ -311,15 +316,23 @@ export default function ContactSection() {
                   )}
                 </div>
 
-                {/* BUTTON */}
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#E63946] hover:bg-[#d92f3c] text-white py-4 rounded-2xl font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_10px_30px_rgba(230,57,70,0.35)]"
+                  disabled={sending}
+                  className="w-full bg-[#E63946] hover:bg-[#d92f3c] disabled:opacity-70 disabled:cursor-not-allowed text-white py-4 rounded-2xl font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_10px_30px_rgba(230,57,70,0.35)]"
                 >
-
-                  <FaPaperPlane size={15} />
-
-                  Send Message
+                  {sending ? (
+                    <>
+                      <FaSpinner className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <FaPaperPlane size={15} />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>

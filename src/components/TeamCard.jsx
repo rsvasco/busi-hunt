@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 
-import anand from "../assets/anand.jpeg";
+/* import anand from "../assets/anand.jpeg"; */
 import anbuSuriya from "../assets/anbu suriya.jpeg";
 import satishkumar from "../assets/Sathishkumar.jpeg";
-import arunkumar from "../assets/arunkumar.jpeg";
+import arunkumar from "../assets/kumar.png";
 import devaraj from "../assets/Devaraj.jpeg";
 import duraikannu from "../assets/duraikannu.jpeg";
 import karthick from "../assets/Karthick.jpeg";
@@ -22,18 +22,18 @@ import shanmugam from "../assets/Shanmugam.jpeg";
 import shiva from "../assets/Shiva.jpeg";
 import sundramoorthy from "../assets/Sundramoorthy.jpeg";
 import suthakhar from "../assets/Suthakhar.jpeg";
-import thanigaivelan from "../assets/Thanigaivelan.jpeg";
+import thanigaivelan from "../assets/tha.png";
 import thiyagu from "../assets/Thiyagu.jpeg";
 import vairamani from "../assets/Vairamani.jpeg";
 import Sadam from "../assets/Sadam.jpeg";
 
 const teamData = [
-  {
+  /* {
     name: "Mr. SV Anand",
     role: "DIRECTOR",
     company: "BusiHunt",
     image: anand,
-  },
+  }, */
   {
     name: "Mr. Anbu Suriya",
     role: "HOTEL & PUB",
