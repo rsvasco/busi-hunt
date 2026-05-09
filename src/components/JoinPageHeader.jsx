@@ -24,6 +24,8 @@ export default function JoinPageHeader() {
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 text-center">
+
+        
         {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}

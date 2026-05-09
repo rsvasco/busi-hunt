@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import galleryBg from "../assets/about.png";
+import galleryBg from "../assets/gal.png";
 
 export default function GalleryHeader() {
   return (
@@ -13,16 +13,16 @@ export default function GalleryHeader() {
         }}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      {/* Dark Overlay - reduced from bg-black/65 to bg-black/45 */}
+<div className="absolute inset-0 bg-black/45" />
 
-      {/* Premium Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1F2A5A]/90 via-[#1F2A5A]/40 to-[#E63946]/60" />
+{/* Premium Gradient Overlay - reduced opacity */}
+<div className="absolute inset-0 bg-gradient-to-r from-[#1F2A5A]/75 via-[#1F2A5A]/25 to-[#E63946]/35" />
 
-      {/* Glow Effects */}
-      <div className="absolute -top-20 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#1F2A5A]/30 rounded-full blur-3xl" />
+{/* Glow Effects - reduced intensity and size */}
+<div className="absolute -top-20 left-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-[#1F2A5A]/15 rounded-full blur-3xl" />
 
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#E63946]/25 rounded-full blur-3xl" />
+<div className="absolute bottom-0 right-0 w-[250px] md:w-[400px] h-[250px] md:h-[400px] bg-[#E63946]/12 rounded-full blur-3xl" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-10 text-center">
@@ -34,7 +34,7 @@ export default function GalleryHeader() {
           transition={{ duration: 0.5 }}
           className="uppercase tracking-[0.35em] text-[#E63946] text-xs sm:text-sm font-semibold mb-5"
         >
-          Premium Gallery
+          BUSIHUNT GALLERY
         </motion.p>
 
         {/* Title */}

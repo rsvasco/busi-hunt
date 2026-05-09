@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const sections = [
   {
     title: "Entrepreneurial Leadership",
     content:
-      "As Director and Chairman of BusiHunt, S. V. Anand spearheads a global networking vision designed to unite entrepreneurs, innovators, and industry leaders through impactful business forums and strategic collaborations.",
+      "As Director and Chairman of BusiHunt, S. V. Anand spearheads a global networking vision designed to connect 100 cities by uniting entrepreneurs, innovators, and industry leaders through impactful business forums and strategic collaborations.",
   },
   {
     title: "Strategic Vision",
@@ -59,11 +60,11 @@ function ContentCard({ title, content, index }) {
           {content}
         </p>
 
-        {/* Footer */}
+        {/* Footer 
         <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-[#1F2A5A] transition-all duration-300 group-hover:translate-x-1">
           <span>Learn More</span>
           <ArrowRight size={16} />
-        </div>
+        </div>*/}
       </div>
     </motion.div>
   );
@@ -111,11 +112,14 @@ export default function DirectorContentSections() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
-          <button className="inline-flex items-center justify-center rounded-full bg-[#E63946] px-8 py-4 text-sm font-bold text-white shadow-[0_12px_30px_rgba(230,57,70,0.35)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#d62839] hover:shadow-[0_18px_40px_rgba(230,57,70,0.45)]">
-            Connect With BusiHunt
-          </button>
-        </div>
+       <div className="mt-16 text-center">
+  <Link
+    to="/contact"
+    className="inline-flex items-center justify-center rounded-full bg-[#E63946] px-8 py-4 text-sm font-bold text-white shadow-[0_12px_30px_rgba(230,57,70,0.35)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#d62839] hover:shadow-[0_18px_40px_rgba(230,57,70,0.45)]"
+  >
+    Connect With BusiHunt
+  </Link>
+</div>
       </div>
     </section>
   );

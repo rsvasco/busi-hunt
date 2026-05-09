@@ -196,7 +196,7 @@ export default function TeamSection() {
           </span>
 
           <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-[#1F2A5A] leading-tight">
-            Meet The Professionals
+            Meet Our Trusted Members
           </h2>
 
           <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">

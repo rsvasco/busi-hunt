@@ -24,7 +24,7 @@ const testimonials = [
     review:
       "The BusiHunt community helped me scale my business confidently and connect with the right people at the right time.",
     initial: "L",
-    rating: 4,
+    rating: 5,
   },
 ];
 

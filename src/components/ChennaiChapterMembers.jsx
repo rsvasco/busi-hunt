@@ -3,7 +3,7 @@ import { FiUsers } from "react-icons/fi";
 
 export default function ChennaiChapterMembers() {
   return (
-    <section className="relative overflow-hidden bg-[#F8FAFC] py-20 md:py-24">
+    <section id="members" className="relative overflow-hidden bg-[#F8FAFC] py-20 md:py-24">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#1F2A5A]/5 rounded-full blur-3xl" />

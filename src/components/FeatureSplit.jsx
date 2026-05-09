@@ -1,6 +1,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import img from '../assets/img.png'
 
 export default function FeatureSplit() {
   return (
@@ -10,7 +11,7 @@ export default function FeatureSplit() {
         {/* Image */}
         <div className="relative group overflow-hidden rounded-2xl shadow-xl">
           <img
-            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80"
+            src= {img}
             alt="Business meeting"
             className="w-full h-72 sm:h-80 md:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -27,16 +28,20 @@ export default function FeatureSplit() {
           </span>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-5 leading-tight">
-            Africa's Premier Business Network
+            Empowering Entrepreneurs Through Meaningful Connections
           </h2>
 
           <p className="text-gray-600 leading-relaxed mb-4 text-sm sm:text-base">
-            BusiHunt is a community-driven organization dedicated to empowering entrepreneurs and business professionals through networking, mentorship, and collaboration.
-          </p>
+    BusiHunt is a community-driven business network where entrepreneurs,
+  professionals, and business owners connect to exchange referrals,
+  share knowledge, and discover new opportunities.
+  </p>
 
           <p className="text-gray-600 leading-relaxed mb-8 text-sm sm:text-base">
-            With chapters spanning over 30 cities, we create environments where businesses can thrive, connections are made, and opportunities are unlocked.
-          </p>
+    Through trusted relationships, structured meetings, and collaborative
+  growth, we help members expand their network, strengthen their skills,
+  and grow their businesses with confidence.
+  </p>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

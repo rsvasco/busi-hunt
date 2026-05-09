@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function GrowthCTASection() {
   return (
@@ -94,14 +95,22 @@ export default function GrowthCTASection() {
 
               {/* CTA Buttons */}
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <button className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-[#E63946] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-slate-100">
-                  Join Us Now
-                  <ArrowRight size={18} />
-                </button>
+                {/* Primary Button */}
+  <Link
+    to="/how-to-join"
+    className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-[#E63946] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-slate-100"
+  >
+    Join Us Now
+    <ArrowRight size={18} />
+  </Link>
 
-                <button className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20">
-                  Learn More
-                </button>
+  {/* Secondary Button */}
+  <Link
+    to="/about"
+    className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/20"
+  >
+    Learn More
+  </Link>
               </div>
             </div>
           </motion.div>

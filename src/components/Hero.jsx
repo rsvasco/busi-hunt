@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import one from '../assets/heroone.jpg'
+import two from '../assets/herotwo.jpg'
+import three from '../assets/herothree.jpg'
+import { Link } from "react-router-dom";
 
 const slides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80",
+    image: one,
     badge: "Unlock Opportunities",
     title: "Innovate.",
     highlight: "Connect. Grow.",
@@ -14,8 +17,7 @@ const slides = [
   },
 
   {
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80",
+    image: two,
     badge: "Build Strong Connections",
     title: "Connect With",
     highlight: "Business Leaders",
@@ -24,8 +26,7 @@ const slides = [
   },
 
   {
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80",
+    image: three,
     badge: "Grow Your Network",
     title: "Collaborate With",
     highlight: "Industry Experts",
@@ -155,6 +156,23 @@ export default function HeroCarousel() {
             {slides[index].desc}
           </motion.p>
 
+          {/* SOCIAL PROOF */}
+<motion.p
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.2, duration: 0.8 }}
+  className="
+    mt-4
+    text-xs
+    sm:text-sm
+    md:text-base
+    font-medium
+    text-white/85
+  "
+>
+  Pondicherry's Fastest Growing Business Network • 100+ Members • Referral-Driven Growth
+</motion.p>
+
           {/* BUTTONS */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
@@ -164,64 +182,65 @@ export default function HeroCarousel() {
           >
 
             {/* PRIMARY BUTTON */}
-            <a
-              href="/how-to-join"
-              className="
-                group
-                inline-flex
-                items-center
-                justify-center
-                gap-3
-                rounded-2xl
-                bg-[#E63946]
-                px-8
-                py-4
-                text-sm
-                font-bold
-                uppercase
-                tracking-[0.15em]
-                text-white
-                shadow-[0_12px_35px_rgba(230,57,70,0.35)]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#d62f3f]
-              "
-            >
-              Join Now
+            {/* PRIMARY BUTTON */}
+<Link
+  to="/how-to-join"
+  className="
+    group
+    inline-flex
+    items-center
+    justify-center
+    gap-3
+    rounded-2xl
+    bg-[#E63946]
+    px-8
+    py-4
+    text-sm
+    font-bold
+    uppercase
+    tracking-[0.15em]
+    text-white
+    shadow-[0_12px_35px_rgba(230,57,70,0.35)]
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:bg-[#d62f3f]
+  "
+>
+  Join Now
 
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </a>
+  <ArrowRight
+    size={16}
+    className="transition-transform duration-300 group-hover:translate-x-1"
+  />
+</Link>
 
-            {/* SECONDARY BUTTON */}
-            <a
-              href="/about"
-              className="
-                inline-flex
-                items-center
-                justify-center
-                rounded-2xl
-                border
-                border-white/15
-                bg-white/5
-                px-8
-                py-4
-                text-sm
-                font-bold
-                uppercase
-                tracking-[0.15em]
-                text-white
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:bg-white/10
-              "
-            >
-              Learn More
-            </a>
+{/* SECONDARY BUTTON */}
+<Link
+  to="/about"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    rounded-2xl
+    border
+    border-white/15
+    bg-white/5
+    px-8
+    py-4
+    text-sm
+    font-bold
+    uppercase
+    tracking-[0.15em]
+    text-white
+    backdrop-blur-xl
+    transition-all
+    duration-300
+    hover:bg-white/10
+  "
+>
+  About Us
+</Link>
           </motion.div>
         </div>
       </div>

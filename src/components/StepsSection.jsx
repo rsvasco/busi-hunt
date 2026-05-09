@@ -62,8 +62,14 @@ export default function StepsSection({ steps = stepsData }) {
 
         {/* ===== HEADER ===== */}
         <div className="text-center max-w-3xl mx-auto mb-14">
+          {/* Badge */}
+  <div className="inline-flex items-center px-6 py-2 rounded-full bg-[#E63946]/10 border border-[#E63946]/20 mb-6">
+    <span className="text-[#E63946] text-xs md:text-sm font-semibold tracking-[0.35em] uppercase">
+      How to Join
+    </span>
+  </div>
           <h2 className="text-3xl md:text-4xl font-bold text-[#1F2A5A] mb-3">
-            Your Journey Starts Here
+            Become Part of the Fastest Business Network
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto">
             Six simple steps to becoming a BusiHunt member.

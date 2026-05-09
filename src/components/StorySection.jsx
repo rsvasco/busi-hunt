@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import ab from '../assets/ab.png'
 
 const fadeUp = {
   hidden: {
@@ -104,7 +105,7 @@ export default function StorySection() {
         <SectionWrapper>
           <div className="overflow-hidden rounded-[22px] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
             <img
-              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80"
+              src= {ab}
               alt="Office Team"
               className="h-[220px] w-full object-cover sm:h-[300px] md:h-[340px]"
             />
@@ -120,19 +121,19 @@ export default function StorySection() {
             </span>
 
             <h2 className="mt-3 text-[28px] font-extrabold leading-[1.08] tracking-tight text-[#111827] sm:text-[34px] lg:text-[42px]">
-              Born from a Vision to Connect Africa&apos;s Brightest Minds
+               Born from a Vision to Connect Ambitious Business Minds
             </h2>
 
             <p className="mt-5 text-[14px] leading-[1.75] text-[#6b7280]">
-              BusiHunt was founded in 2015 with a simple but powerful idea:
-              that business professionals across Africa deserved a platform to
-              connect, learn, and grow together.
+              BusiHunt was created with a simple yet powerful vision: to empower
+  entrepreneurs, professionals, and business owners through meaningful
+  connections, collaboration, and shared opportunities.
             </p>
 
             <p className="mt-4 text-[14px] leading-[1.75] text-[#6b7280]">
-              What started as a small gathering of 20 entrepreneurs in Lagos
-              has grown into a network of over 10,000 members across 30+
-              cities and 15 countries.
+              What began as a growing community in Pondicherry has evolved into
+  Pondicherry's fastest growing business network, where 100+ members
+  exchange referrals, share knowledge, and grow together with confidence.
             </p>
 
             <div className="mt-8">

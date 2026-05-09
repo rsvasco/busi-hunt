@@ -37,9 +37,7 @@ export default function PageHeader() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-gray-200 text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed"
         >
-          Discover the story behind BusiHunt and our mission to transform
-          business networking through innovation, collaboration, and meaningful
-          professional connections.
+          Discover the story behind BusiHunt and our mission to empower entrepreneurs and professionals through innovation, collaboration, and meaningful business connections.
         </motion.p>
       </div>
     </section>

@@ -1,5 +1,5 @@
-import dir from '../assets/anand.png';
-
+import dir from '../assets/anand.jpeg';
+import { Link } from "react-router-dom";
 
 export default function DirectorProfile() {
   return (
@@ -62,16 +62,20 @@ export default function DirectorProfile() {
             {/* Description */}
             <div className="mt-6 space-y-5 text-[14px] leading-7 text-slate-600 sm:text-[15px] md:leading-8">
               <p>
-                With over 18 years of leadership experience across multiple
-                industries, S. V. Anand has built a reputation for innovation,
-                strategic thinking, and creating impactful networking
-                opportunities for entrepreneurs and professionals.
+                 With a strong foundation in Computer Science and an MSc from Pondicherry
+  University, S. V. Anand brings over 18 years of extensive leadership
+  experience across media, tourism, interior design, and construction. As
+  Director and Chairman of BusiHunt, he leads a bold vision to connect 100
+  cities through dynamic business forums that foster collaboration,
+  strategic partnerships, and meaningful networking opportunities for
+  entrepreneurs and professionals.
               </p>
 
               <p>
-                His mission is to create a strong business ecosystem where
-                collaboration, mentorship, and professional growth help
-                entrepreneurs unlock their true potential.
+                Guided by innovation, inclusivity, diversity, and integrity, his mission
+  is to build a thriving business ecosystem where mentorship,
+  professional development, and collective knowledge empower every member
+  to achieve lasting success and unlock their true business potential.
               </p>
             </div>
 
@@ -89,25 +93,33 @@ export default function DirectorProfile() {
 
               <div className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-[0_10px_35px_rgba(31,42,90,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(31,42,90,0.10)]">
                 <h3 className="text-3xl font-black text-[#1F2A5A]">
-                  100+
+                  100
                 </h3>
 
                 <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  Business Leaders
+                  Cities Vision
                 </p>
               </div>
             </div>
 
-            {/* Buttons */}
-            <div className="mt-8 flex flex-wrap gap-3">
-              <button className="rounded-2xl bg-[#E63946] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(230,57,70,0.30)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#d92d3a]">
-                Connect Now
-              </button>
+            
+<div className="mt-8 flex flex-wrap gap-3">
+  {/* Connect Now → Contact Page */}
+  <Link
+    to="/contact"
+    className="rounded-2xl bg-[#E63946] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_25px_rgba(230,57,70,0.30)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#d92d3a]"
+  >
+    Connect Now
+  </Link>
 
-              <button className="rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-[#1F2A5A] transition-all duration-300 hover:border-[#1F2A5A] hover:bg-[#1F2A5A] hover:text-white">
-                Learn More
-              </button>
-            </div>
+  {/* Learn More → About Director Details (same page or dedicated page) */}
+  <Link
+    to="/director"
+    className="rounded-2xl border border-slate-300 bg-white px-6 py-3 text-sm font-bold text-[#1F2A5A] transition-all duration-300 hover:border-[#1F2A5A] hover:bg-[#1F2A5A] hover:text-white"
+  >
+    Learn More
+  </Link>
+</div>
           </div>
         </div>
       </div>

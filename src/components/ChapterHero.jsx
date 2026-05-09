@@ -1,4 +1,5 @@
 import beach from "../assets/beach.jpg";
+import { Link } from "react-router-dom";
 
 export default function ChapterHero() {
   return (
@@ -193,59 +194,65 @@ export default function ChapterHero() {
               text-slate-300
               sm:text-lg
             "
-          >
-            Join a premium networking community designed for entrepreneurs,
-            founders, and professionals to connect, collaborate, and grow.
+          >Join the BusiHunt Pondicherry Chapter and connect with entrepreneurs, founders, and professionals across the region.
           </p>
 
           {/* BUTTONS */}
-          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+<div className="mt-8 flex flex-col gap-4 sm:flex-row">
 
-            {/* PRIMARY BUTTON */}
-            <button
-              className="
-                rounded-2xl
-                bg-[#E63946]
-                px-7
-                py-4
-                text-sm
-                font-bold
-                uppercase
-                tracking-[0.15em]
-                text-white
-                shadow-[0_10px_30px_rgba(230,57,70,0.35)]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#d62f3f]
-              "
-            >
-              Join Chapter
-            </button>
+  {/* PRIMARY BUTTON */}
+  <Link
+    to="/contact"
+    className="
+      rounded-2xl
+      bg-[#E63946]
+      px-7
+      py-4
+      text-sm
+      font-bold
+      uppercase
+      tracking-[0.15em]
+      text-white
+      shadow-[0_10px_30px_rgba(230,57,70,0.35)]
+      transition-all
+      duration-300
+      hover:-translate-y-1
+      hover:bg-[#d62f3f]
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Join Chapter
+  </Link>
 
-            {/* SECONDARY BUTTON */}
-            <button
-              className="
-                rounded-2xl
-                border
-                border-white/10
-                bg-white/5
-                px-7
-                py-4
-                text-sm
-                font-bold
-                uppercase
-                tracking-[0.15em]
-                text-white
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:bg-white/10
-              "
-            >
-              Explore Members
-            </button>
-          </div>
+  {/* SECONDARY BUTTON */}
+  <a
+    href="#members"
+    className="
+      rounded-2xl
+      border
+      border-white/10
+      bg-white/5
+      px-7
+      py-4
+      text-sm
+      font-bold
+      uppercase
+      tracking-[0.15em]
+      text-white
+      backdrop-blur-xl
+      transition-all
+      duration-300
+      hover:bg-white/10
+      inline-flex
+      items-center
+      justify-center
+    "
+  >
+    Explore Members
+  </a>
+</div>
 
           {/* STATS */}
           <div
@@ -267,7 +274,7 @@ export default function ChapterHero() {
             <div>
 
               <h3 className="text-2xl sm:text-4xl font-black text-white">
-                500+
+                100+
               </h3>
 
               <p className="mt-1 text-xs sm:text-sm text-slate-400">
@@ -279,7 +286,7 @@ export default function ChapterHero() {
             <div>
 
               <h3 className="text-2xl sm:text-4xl font-black text-white">
-                40+
+                20+
               </h3>
 
               <p className="mt-1 text-xs sm:text-sm text-slate-400">
@@ -287,7 +294,7 @@ export default function ChapterHero() {
               </p>
             </div>
 
-            {/* STAT */}
+            {/* STAT 
             <div>
 
               <h3 className="text-2xl sm:text-4xl font-black text-white">
@@ -297,7 +304,7 @@ export default function ChapterHero() {
               <p className="mt-1 text-xs sm:text-sm text-slate-400">
                 Partnerships
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -102,7 +102,7 @@ export default function Galleryone() {
         {/* HEADING */}
         <div className="relative z-10 text-center max-w-4xl mx-auto mb-16">
           <p className="uppercase tracking-[0.35em] text-sm text-[#E63946] font-semibold mb-4">
-            PREMIUM MOMENTS
+            MEMORIES & EVENTS
           </p>
 
           <h2 className="text-4xl md:text-6xl font-black leading-tight">

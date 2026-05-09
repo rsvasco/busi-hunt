@@ -21,11 +21,11 @@ export default function CTASection() {
           {/* Content */}
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-              Ready to Grow Your Business?
+              Ready to Grow Your Business in Pondicherry?
             </h2>
 
             <p className="text-white/80 text-sm sm:text-base md:text-lg mb-8">
-              Join 500+ business leaders already leveraging BusiHunt’s powerful network to scale faster.
+              Join 100+ business leaders in Pondicherry's fastest growing business network and unlock new opportunities through trusted referrals and meaningful connections.
             </p>
 
             {/* Buttons */}

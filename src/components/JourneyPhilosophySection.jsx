@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Rocket,
   Lightbulb,
@@ -97,9 +98,9 @@ export default function VisionCollaborationSection() {
             {/* Stats */}
             <div className="mt-8 flex flex-wrap gap-4">
               {[
-                { value: "500+", label: "Members" },
+                { value: "100+", label: "Members" },
                 { value: "20+", label: "Events" },
-                { value: "15+", label: "Chapters" },
+                { value: "2", label: "Chapters" },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -169,22 +170,57 @@ export default function VisionCollaborationSection() {
               </div>
 
               {/* CTA */}
-              <div className="mt-5 flex items-center justify-between rounded-[24px] bg-gradient-to-r from-[#FF4D5A] to-[#E63946] px-5 py-5 shadow-[0_12px_30px_rgba(230,57,70,0.28)]">
-                
-                <div>
-                  <h4 className="text-xl font-black text-white">
-                    Join Our Network
-                  </h4>
+              {/* CTA */}
+<Link
+  to="/how-to-join"
+  className="
+    group
+    mt-5
+    flex
+    items-center
+    justify-between
+    rounded-[24px]
+    bg-gradient-to-r
+    from-[#FF4D5A]
+    to-[#E63946]
+    px-5
+    py-5
+    shadow-[0_12px_30px_rgba(230,57,70,0.28)]
+    transition-all
+    duration-300
+    hover:scale-[1.02]
+    hover:shadow-[0_18px_40px_rgba(230,57,70,0.35)]
+  "
+>
+  <div>
+    <h4 className="text-xl font-black text-white">
+      Join Our Network
+    </h4>
 
-                  <p className="mt-1 text-sm text-white/90">
-                    Build valuable business connections.
-                  </p>
-                </div>
+    <p className="mt-1 text-sm text-white/90">
+      Build valuable business connections.
+    </p>
+  </div>
 
-                <button className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#E63946] transition-all duration-300 hover:scale-110">
-                  <ArrowRight size={20} />
-                </button>
-              </div>
+  <div
+    className="
+      flex
+      h-14
+      w-14
+      items-center
+      justify-center
+      rounded-2xl
+      bg-white
+      text-[#E63946]
+      transition-all
+      duration-300
+      group-hover:translate-x-1
+      group-hover:scale-110
+    "
+  >
+    <ArrowRight size={20} />
+  </div>
+</Link>
             </div>
           </motion.div>
 

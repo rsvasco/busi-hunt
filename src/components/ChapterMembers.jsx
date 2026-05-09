@@ -111,7 +111,7 @@ const members = [
 
 export default function ChapterMembers() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] via-[#F5F9FF] to-[#EDF4FF] py-16 md:py-24">
+    <section id="members" className="relative overflow-hidden bg-gradient-to-br from-[#FFFFFF] via-[#F5F9FF] to-[#EDF4FF] py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center">
