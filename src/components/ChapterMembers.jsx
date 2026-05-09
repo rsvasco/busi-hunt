@@ -11,7 +11,7 @@ import muruganOne from "../assets/murugan1.jpeg";
 
 
 import parvin from "../assets/Parvin.jpeg";
-import babu from "../assets/babu.jpeg";
+import babu from "../assets/babuu.jpeg";
 
 import sakarai from "../assets/Sakarai.jpeg";
 
@@ -38,70 +38,70 @@ const members = [
     image: muruganOne,
   },
   {
-    name: "Parvin Begum",
+    name: "Mrs. Parvin Begum",
     designation: "Secretary Treasurer",
     businessCategory: "Tours & Travels",
     company: "TQ Fly Travels",
     image: parvin,
   },
   {
-    name: "Vairamani",
+    name: "Mr. Vairamani",
     designation: "President",
     businessCategory: "Gym & Fitness",
     company: "Vairam Fitness Centre",
     image: vairamani,
   },
   {
-    name: "Thanigaivelan Shanmugam",
+    name: "Mr. Thanigaivelan Shanmugam",
     designation: "Vice President",
     businessCategory: "Digital Marketing",
     company: "Advanzo Digital Solutions",
     image: thanigaivelan,
   },
   {
-    name: "Sathishkumar",
-    designation: "LGT Coordinator",
-    businessCategory: "Green Organic Kitchen / Water Purifier",
+    name: "Mr. Sathishkumar",
+    designation: "LGH Coordinator",
+    businessCategory: "Green Ocean Aquatech Water Purifier",
     company: "",
     image: satishkumar,
   },
   {
-    name: "Devaraj",
-    designation: "Menfo Coordinator",
+    name: "Mr. Devaraj",
+    designation: "Mentor Coordinator",
     businessCategory: "Mobile Sales & Service",
     company: "Sivam Mobiles",
     image: devaraj,
   },
   {
-    name: "Sakkarai",
+    name: "Mr. Sakkarai",
     designation: "Growth Coordinator",
-    businessCategory: "Furniture",
+    businessCategory: "Furnitures",
     company: "Furnitures Lifestyle",
     image: sakarai,
   },
   {
-    name: "Madhurai",
+    name: "Mr. Madhurai",
     designation: "Attendance Coordinator",
     businessCategory: "Photography",
-    company: "Athibene Creations",
+    company: "RING & RING",
     image: madhurai,
   },
   {
-    name: "Arun Kumar",
+    name: "Mr. Arun Kumar",
     designation: "Referral Coordinator",
-    businessCategory: "",
-    company: "",
+    businessCategory: "CCTV",
+    company: "HI-FOCUS SECURITY SYSTEM",
     image: arunkumar,
   },
    {
-    name: "Babu",
+    name: "Mr. Babu",
     designation: "M2M Coordinator",
-    businessCategory: "Steel",
+    businessCategory: "LIC",
     company: "Investment World",
     image: babu,
   }, 
   {
-    name: "Duraikannu",
+    name: "Mr. Duraikannu",
     designation: "Attire Coordinator",
     businessCategory: "Printers",
     company: "PRP Printers",

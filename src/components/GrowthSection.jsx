@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
   Users,
@@ -13,6 +14,7 @@ const features = [
     description:
       "Build meaningful relationships with entrepreneurs, founders, and professionals through exclusive networking opportunities.",
     icon: Users,
+    link: "/pondy-chapter",
   },
   {
     id: "02",
@@ -20,6 +22,7 @@ const features = [
     description:
       "Unlock your potential with workshops, mentorship programs, and practical learning experiences.",
     icon: GraduationCap,
+    link: "/how-to-join",
   },
   {
     id: "03",
@@ -27,6 +30,7 @@ const features = [
     description:
       "Accelerate your business growth with collaborations, exposure, and industry insights.",
     icon: Briefcase,
+    link: "/team",
   },
 ];
 
@@ -85,9 +89,10 @@ export default function GrowthSection() {
                 className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-b from-[#0F172A]/95 to-[#081120]/95 p-6 transition-all duration-500 hover:border-[#E63946]/30"
               >
                 {/* Hover Glow */}
-                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#E63946]/10 via-transparent to-transparent" />
-                </div>
+                {/* Hover Glow */}
+<div className="absolute inset-0 pointer-events-none opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+  <div className="absolute inset-0 bg-gradient-to-br from-[#E63946]/10 via-transparent to-transparent" />
+</div>
 
                 {/* Top */}
                 <div className="relative flex items-start justify-between">
@@ -115,15 +120,19 @@ export default function GrowthSection() {
                 </div>
 
                 {/* Button */}
-                <div className="mt-8">
-                  <button className="group/btn inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[#E63946] hover:bg-[#E63946]">
-                    Explore
-                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:rotate-45" />
-                  </button>
-                </div>
+{/* Button */}
+<div className="mt-8 relative z-10">
+  <Link
+    to={item.link}
+    className="group/btn inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[#E63946] hover:bg-[#E63946]"
+  >
+    Explore
+    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:rotate-45" />
+  </Link>
+</div>
 
                 {/* Border Glow */}
-                <div className="absolute inset-0 rounded-[28px] border border-transparent transition-all duration-500 group-hover:border-[#E63946]/20" />
+                <div className="absolute inset-0 rounded-[28px] border border-transparent pointer-events-none transition-all duration-500 group-hover:border-[#E63946]/20" />
               </motion.div>
             );
           })}

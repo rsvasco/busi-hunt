@@ -48,7 +48,7 @@ export default function LocationSection() {
 
             {/* Open Maps Button */}
             <a
-              href="https://www.google.com/maps?q=11.9409063,79.8110432"
+              href="https://www.google.com/maps/place/BusiHunt/@11.9409063,79.8110432,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5361f46a91e8cb:0xffe85a9a6d291d47!8m2!3d11.9409063!4d79.8110432!16s%2Fg%2F11w36nfqrj!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="absolute top-5 right-5 z-30 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-sm font-semibold text-[#1F2A5A] shadow-lg hover:scale-105 transition"
@@ -148,7 +148,7 @@ export default function LocationSection() {
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
                 <a
-                  href="https://www.google.com/maps?q=11.9409063,79.8110432"
+                  href="https://www.google.com/maps/place/BusiHunt/@11.9409063,79.8110432,17z/data=!3m1!4b1!4m6!3m5!1s0x3a5361f46a91e8cb:0xffe85a9a6d291d47!8m2!3d11.9409063!4d79.8110432!16s%2Fg%2F11w36nfqrj!5m1!1e2?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#E63946] text-white px-6 py-3 rounded-xl text-sm font-semibold text-center hover:scale-105 hover:shadow-xl transition-all duration-300"

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutBg from "../assets/about.png";
+import aboutBg from "../assets/ahero.png";
 
 export default function PageHeader() {
   return (
